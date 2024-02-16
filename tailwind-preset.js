@@ -33,7 +33,7 @@ module.exports = {
       xl: '1280px',
     },
     fontFamily: {
-      display: ['Georgia', 'serif'],
+      display: ['lora', 'serif'],
       body: ['montserrat', 'lato', 'arial', 'sans-serif'],
     },
     fontSize: {

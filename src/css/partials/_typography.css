@@ -1,0 +1,36 @@
+@font-face{
+  font-family:"lora";
+  font-weight: 400;
+  src:url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+}
+
+@font-face{
+  font-family:"lora";
+  font-weight: 500;
+  src:url("https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap");
+}
+
+@font-face{
+  font-family:"lora";
+  font-weight: 600;
+  src:url("https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap");
+}
+
+@font-face {
+  font-family: "montserrat";
+  font-weight: 300;
+  font-style: italic;
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap");
+}
+
+@font-face {
+  font-family: "montserrat";
+  font-weight: 400;
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+}
+
+@font-face {
+  font-family: "montserrat";
+  font-weight: 700;
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+}
