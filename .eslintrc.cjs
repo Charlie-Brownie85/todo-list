@@ -1,5 +1,5 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
+// require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
   root: true,
@@ -14,14 +14,14 @@ module.exports = {
     'airbnb-base',
     'plugin:vue/vue3-essential',
     'eslint:recommended',
-    '@vue/eslint-config-typescript'
+    '@vue/eslint-config-typescript',
   ],
   parserOptions: {
-    ecmaVersion: 'latest'
+    ecmaVersion: 'latest',
   },
   rules: {
     semi: [2, 'always'],
-    'indent': ['error', 4, { SwitchCase: 2 }],
+    indent: ['error', 2, { SwitchCase: 2 }],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-useless-return': 'warn',
@@ -68,4 +68,4 @@ module.exports = {
       },
     },
   ],
-}
+};
