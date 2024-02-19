@@ -28,6 +28,7 @@ module.exports = {
     'no-useless-constructor': 0,
     'no-empty-function': 0,
     'no-shadow': 'off',
+    'no-param-reassign': 'off',
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/no-unused-vars': ['error'],
     'consistent-return': 'warn',

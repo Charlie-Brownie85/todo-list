@@ -25,8 +25,9 @@ h2
 }
 
 #app {
-  @apply min-h-screen m-0 bg-primary-100 lg:bg-white;
+  @apply min-h-screen m-0 bg-primary-100;
 }
+
 @media screen(lg) {
   #app {
     @apply flex flex-col pb-12;
