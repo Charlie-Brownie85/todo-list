@@ -1,10 +1,10 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from 'node:url';
 
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
 import Components from 'unplugin-vue-components/vite';
 import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
 
-import vue from '@vitejs/plugin-vue'
+import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -22,12 +22,12 @@ export default defineConfig({
       extensions: ['vue'],
       deep: true,
       dts: true,
-    })
+    }),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
   },
   build: {
     sourcemap: true,
@@ -35,4 +35,4 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
   },
-})
+});
