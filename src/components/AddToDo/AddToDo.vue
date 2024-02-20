@@ -40,11 +40,13 @@ function submitToDo(e: KeyboardEvent) {
     v-model="todoText"
     :placeholder="placeholder"
     @keypress="submitToDo"
-  />
+  >
   <button
     @click="addNewTodo"
     :disabled="!todoText.value?.length"
-  >Add</button>
+  >
+    Add
+  </button>
 </template>
 <style scoped lang="postcss">
 input {

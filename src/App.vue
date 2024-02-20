@@ -8,9 +8,14 @@ const { todos } = storeToRefs(useTodosStore());
 
 <template>
   <main class="p-4">
-    <h1 class="font-bold text-3xl text-center mb-4">To Do list:</h1>
+    <h1 class="font-bold text-3xl text-center mb-4">
+      To Do list:
+    </h1>
     <AddToDo />
-    <div v-for="todo in todos" :key="todo.id">
+    <div
+      v-for="todo in todos"
+      :key="todo.id"
+    >
       <ToDoItem :todo="todo" />
     </div>
   </main>
