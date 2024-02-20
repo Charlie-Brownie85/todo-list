@@ -45,7 +45,7 @@ function submitToDo(e: KeyboardEvent) {
     >
     <button
       type="button"
-      :disabled="!todoText.length"
+      :disabled="!todoText?.length"
       @click="addNewTodo"
     >
       <span>Add</span>
