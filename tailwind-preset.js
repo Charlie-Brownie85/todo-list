@@ -38,8 +38,8 @@ module.exports = {
       xl: '1280px',
     },
     fontFamily: {
-      display: ['lora', 'serif'],
-      body: ['montserrat', 'lato', 'arial', 'sans-serif'],
+      display: ['Lora', 'serif'],
+      body: ['Montserrat', 'lato', 'arial', 'sans-serif'],
     },
     fontSize: {
       xxs: '0.625rem',
