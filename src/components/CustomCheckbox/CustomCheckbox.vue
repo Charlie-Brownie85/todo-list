@@ -2,14 +2,16 @@
 import { computed } from 'vue';
 
 const props = withDefaults(defineProps<{
-    value?: string | boolean;
-    modelValue?: boolean;
-    inputId: string;
-    disabled?: boolean;
-  }>(), {
+      value?: string | boolean;
+      modelValue?: boolean;
+      inputId: string;
+      disabled?: boolean;
+      checkColor?: string;
+    }>(), {
   value: '',
   modelValue: false,
   disabled: false,
+  checkColor: '#3EBB59',
 });
 
 const emit = defineEmits(['update:modelValue']);
@@ -38,12 +40,16 @@ const updateModelValue = (event: Event) => {
       class="checkbox__label"
     >
       <div class="checkbox__square">
-        <!-- <component
-          :is="getIcon"
-          width="13"
-          height="9"
+        <svg
           class="checkbox__check"
-        /> -->
+          viewbox="0 0 32 32"
+        >
+          <path
+            d="M4,11 l 6,6 l 10,-10"
+            fill="none"
+            stroke-dasharray="24"
+          />
+        </svg>
       </div>
       <slot />
     </label>
@@ -59,6 +65,10 @@ const updateModelValue = (event: Event) => {
     top: 0;
     left: 0;
     pointer-events: none;
+
+    &:checked + .checkbox__label .checkbox__check path {
+      stroke-dashoffset: 0;
+    }
   }
 
   &__label {
@@ -66,14 +76,17 @@ const updateModelValue = (event: Event) => {
   }
 
   &__square {
-    @apply w-5 h-5 rounded flex-shrink-0 bg-base-100 border border-base-400 flex items-center justify-center transition-colors duration-200;
+    @apply w-6 h-6 rounded flex-shrink-0 bg-base-100 border border-base-400 flex items-center justify-center transition-colors duration-200;
   }
 
   &__check {
-    display: block;
-    width: 65%;
-    opacity: 0;
-    @apply text-white transition-opacity duration-200;
+    @apply w-6 h-6;
+    path {
+      stroke-dashoffset: 24;
+      transition: stroke-dashoffset 0.2s;
+      stroke-width: 4;
+      stroke: v-bind('props.checkColor');
+    }
   }
 }
 </style>

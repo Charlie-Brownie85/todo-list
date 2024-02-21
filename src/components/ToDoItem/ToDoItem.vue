@@ -3,15 +3,16 @@ import type { Todo } from '@/declarations/types';
 
 const props = defineProps<{ todo: Todo }>();
 
-const emit = defineEmits(['toggle']);
+const emit = defineEmits(['toggle-todo']);
 
 </script>
 <template>
-  <div class="flex items-center gap-4 p-4">
+  <div class="flex items-center gap-4 py-2">
     <CustomCheckbox
       :input-id="`${props.todo.id}-checkbox`"
-      :value="props.todo.completed"
-      @update:model-value="emit('toggle')"
+      value="completed"
+      :checked="props.todo.completed"
+      @update:model-value="emit('toggle-todo')"
     />
     <div class="w-full">
       <span
@@ -24,6 +25,7 @@ const emit = defineEmits(['toggle']);
     <button
       type="button"
       class="border bg-state-error-300 border-state-error-500 p-2 text-xxs"
+      data-testid="delete-todo"
     >
       X
     </button>
@@ -33,6 +35,7 @@ const emit = defineEmits(['toggle']);
 .todo-text {
   position: relative;
   opacity: 1;
+  user-select: none;
 
   &::after {
     content: '';
