@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { placeholderExamples } from '@/config/placeholder-examples';
 
-import { useTodosStore } from '@/stores/todos.ts';
+import { useTodosStore } from '@/stores/todos';
 
 const { addToDo } = useTodosStore();
 const todoText = ref('');

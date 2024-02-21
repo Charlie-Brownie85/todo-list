@@ -14,7 +14,7 @@ export const useTodosStore = defineStore('todos', () => {
     todos.value = todos.value.filter((todo) => todo.id !== id);
   }
 
-  function toggleToDoCompletedStatus(id: string) {
+  function toggleToDo(id: string) {
     const todo = todos.value.find((item) => item.id === id);
     if (todo) {
       todo.completed = !todo.completed;
@@ -31,7 +31,7 @@ export const useTodosStore = defineStore('todos', () => {
     todos,
     addToDo,
     removeToDo,
-    toggleToDoCompletedStatus,
+    toggleToDo,
     completeAllToDos,
   };
 });

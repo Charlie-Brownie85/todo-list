@@ -3,7 +3,10 @@ import { storeToRefs } from 'pinia';
 
 import { useTodosStore } from './stores/todos';
 
-const { todos } = storeToRefs(useTodosStore());
+const todosStore = useTodosStore();
+
+const { toggleToDo } = todosStore;
+const { todos } = storeToRefs(todosStore);
 </script>
 
 <template>
@@ -16,7 +19,10 @@ const { todos } = storeToRefs(useTodosStore());
       v-for="todo in todos"
       :key="todo.id"
     >
-      <ToDoItem :todo="todo" />
+      <ToDoItem
+        :todo="todo"
+        @toggle="toggleToDo(todo.id)"
+      />
     </div>
   </main>
 </template>

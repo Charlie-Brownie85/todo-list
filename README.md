@@ -7,4 +7,5 @@
 - Add persistent state through `localStorage` and load list on init app
 - Implement `TodoList` component to list separately uncompleted and completed tasks
 - Add translations
-- Add testing
+- Dark theme
+- Add playwright testing?
