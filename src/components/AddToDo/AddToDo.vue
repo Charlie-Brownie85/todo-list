@@ -3,7 +3,7 @@ import { ref, computed } from 'vue';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import { placeholderExamples } from '@/utils/placeholder-examples';
+import { placeholderExamples } from '@/config/placeholder-examples';
 
 import { useTodosStore } from '@/stores/todos.ts';
 

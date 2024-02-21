@@ -14,7 +14,7 @@ const mocks = vi.hoisted(() => ({
   ],
 }));
 
-vi.mock('@/utils/placeholder-examples', () => ({
+vi.mock('@/config/placeholder-examples', () => ({
   placeholderExamples: mocks.placeholderExamples,
 }));
 
