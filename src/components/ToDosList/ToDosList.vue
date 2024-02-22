@@ -1,7 +1,3 @@
-import type { log } from 'console';
-import type { debug } from 'console';
-import type { log } from 'console';
-import type { TransitionGroup } from 'vue';
 <script setup lang="ts">
 import { computed } from 'vue';
 import { storeToRefs } from 'pinia';
@@ -17,7 +13,6 @@ const pendingToDos = computed(() => todos.value.filter((todo) => !todo.completed
 const doneToDos = computed(() => todos.value.filter((todo) => todo.completed));
 
 function addCompletedClass(el) {
-  console.log(el);
   el.firstChild.classList.add('todo--completed');
 }
 
