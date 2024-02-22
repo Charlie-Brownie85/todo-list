@@ -125,7 +125,7 @@ describe('AddToDo', () => {
       (getInput() as HTMLInputElement).placeholder.replace('e.g. ', ''),
     ];
 
-    for (let i = 0; i < 3; i += 1) {
+    for (let i = 0; i < 5; i += 1) {
       /* eslint-disable no-await-in-loop */
       await user.type(getInput(), 'test');
       await user.click(getButton());

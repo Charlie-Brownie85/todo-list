@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-
 const props = withDefaults(defineProps<{
       value?: string | boolean;
       modelValue?: boolean;
@@ -16,24 +14,17 @@ const props = withDefaults(defineProps<{
 
 const emit = defineEmits(['update:modelValue']);
 
-const isChecked = computed(() => props.modelValue === true);
-
-const updateModelValue = (event: Event) => {
-  const { checked } = event.target as HTMLInputElement;
-  emit('update:modelValue', checked);
-};
-
 </script>
 <template>
   <div class="checkbox">
     <input
       type="checkbox"
       :id="inputId"
-      :checked="isChecked"
+      :checked="props.modelValue"
       :value="props.value"
       :disabled="props.disabled"
       v-bind="$attrs"
-      @change="updateModelValue"
+      @change="emit('update:modelValue', ($event?.target as HTMLInputElement)?.checked)"
     >
     <label
       :for="inputId"

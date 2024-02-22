@@ -21,7 +21,7 @@ const { todos } = storeToRefs(todosStore);
     >
       <ToDoItem
         :todo="todo"
-        @toggle="toggleToDo(todo.id)"
+        @toggle-todo="toggleToDo(todo.id)"
       />
     </div>
   </main>
