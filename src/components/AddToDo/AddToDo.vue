@@ -39,6 +39,7 @@ function submitToDo(e: KeyboardEvent) {
     <input
       class="w-full max-w-md"
       type="text"
+      name="new-todo-input"
       v-model="todoText"
       :placeholder="placeholder"
       @keypress="submitToDo"

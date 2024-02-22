@@ -11,7 +11,10 @@ export const useTodosStore = defineStore('todos', () => {
   }
 
   function removeToDo(id: string) {
-    todos.value = todos.value.filter((todo) => todo.id !== id);
+    const index = todos.value.findIndex((todo) => todo.id === id);
+    if (index !== -1) {
+      todos.value.splice(index, 1);
+    }
   }
 
   function toggleToDo(id: string) {

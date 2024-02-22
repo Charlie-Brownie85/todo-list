@@ -1,12 +1,4 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
-
-import { useTodosStore } from './stores/todos';
-
-const todosStore = useTodosStore();
-
-const { toggleToDo } = todosStore;
-const { todos } = storeToRefs(todosStore);
 </script>
 
 <template>
@@ -15,14 +7,6 @@ const { todos } = storeToRefs(todosStore);
       To Do list:
     </h1>
     <AddToDo />
-    <div
-      v-for="todo in todos"
-      :key="todo.id"
-    >
-      <ToDoItem
-        :todo="todo"
-        @toggle-todo="toggleToDo(todo.id)"
-      />
-    </div>
+    <ToDosList />
   </main>
 </template>

@@ -20,6 +20,7 @@ declare module 'vue' {
     SVGIcon: typeof import('./src/components/SVGIcon/SVGIcon.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     ToDoItem: typeof import('./src/components/ToDoItem/ToDoItem.vue')['default']
+    ToDosList: typeof import('./src/components/ToDosList/ToDosList.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }
 }
