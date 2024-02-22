@@ -17,6 +17,7 @@ declare module 'vue' {
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
     InputComponent: typeof import('./src/components/InputComponent/InputComponent.vue')['default']
+    SVGIcon: typeof import('./src/components/SVGIcon/SVGIcon.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     ToDoItem: typeof import('./src/components/ToDoItem/ToDoItem.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
