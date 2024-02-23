@@ -8,7 +8,7 @@ const emit = defineEmits(['toggle-todo', 'delete-todo']);
 </script>
 <template>
   <div
-    class="todo flex items-center gap-4 py-2"
+    class="todo flex items-center gap-4 p-2 rounded-sm"
     :class="{'todo--completed': props.todo.completed }"
   >
     <CustomCheckbox
@@ -40,6 +40,9 @@ const emit = defineEmits(['toggle-todo', 'delete-todo']);
 </template>
 <style scoped lang="postcss">
 .todo {
+  box-shadow: -6px 16px 6px -22px rgba(0, 0, 0, 0.1),
+    9px 5px 18px -9px rgba(0, 0, 0, 0.1);
+
   &-text {
     position: relative;
     opacity: 1;

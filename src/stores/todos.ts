@@ -30,11 +30,23 @@ export const useTodosStore = defineStore('todos', () => {
     });
   }
 
+  function uncheckedToDos() {
+    todos.value.forEach((todo: Todo) => {
+      todo.completed = false;
+    });
+  }
+
+  function clearCompletedTodos() {
+    todos.value = todos.value.filter((todo: Todo) => !todo.completed);
+  }
+
   return {
     todos,
     addToDo,
     removeToDo,
     toggleToDo,
     completeAllToDos,
+    uncheckedToDos,
+    clearCompletedTodos,
   };
 }, { persist: true });

@@ -72,12 +72,12 @@ describe('ToDosList', () => {
 
     const store = useTodosStore();
 
-    await user.click(getAllByRole('checkbox')[0]);
+    await user.click(getAllByRole('checkbox')[1]);
 
     expect(store.toggleToDo).toHaveBeenCalledWith('1');
   });
 
-  it('calls the "removeToDo" method when a ToDo is checked', async () => {
+  it('calls the "removeToDo" method when a ToDo is deleted', async () => {
     const { user, getAllByRole } = setup();
 
     const store = useTodosStore();
@@ -102,5 +102,73 @@ describe('ToDosList', () => {
     await nextTick();
 
     expect(getByText('Great! No pending chores!')).toBeInTheDocument();
+  });
+
+  it('renders the proper text when there are no ToDos', async () => {
+    const { getByText } = setup([]);
+
+    expect(getByText('Start adding tasks!')).toBeInTheDocument();
+  });
+
+  it('calls "completeAllToDos" when the "Complete All" checkbox is checked', async () => {
+    const { user, getByRole } = setup();
+
+    const store = useTodosStore();
+
+    await user.click(getByRole('checkbox', { name: 'complete all tasks' }));
+
+    expect(store.completeAllToDos).toHaveBeenCalled();
+  });
+
+  it('calls "uncheckedToDos" when the "Uncheck All" button is clicked', async () => {
+    const { user, getByRole } = setup([
+      {
+        id: '1',
+        text: 'do laundry',
+        completed: true,
+      },
+      {
+        id: '2',
+        text: 'buy groceries',
+        completed: true,
+      },
+      {
+        id: '3',
+        text: 'clean the house',
+        completed: true,
+      },
+    ]);
+
+    const store = useTodosStore();
+
+    await user.click(getByRole('checkbox', { name: 'uncheck all tasks' }));
+
+    expect(store.uncheckedToDos).toHaveBeenCalled();
+  });
+
+  it('calls "clearCompletedTodos" when the "Clear Completed" button is clicked', async () => {
+    const { user, getByTestId } = setup([
+      {
+        id: '1',
+        text: 'do laundry',
+        completed: true,
+      },
+      {
+        id: '2',
+        text: 'buy groceries',
+        completed: false,
+      },
+      {
+        id: '3',
+        text: 'clean the house',
+        completed: true,
+      },
+    ]);
+
+    const store = useTodosStore();
+
+    await user.click(getByTestId('clear-all-todos'));
+
+    expect(store.clearCompletedTodos).toHaveBeenCalled();
   });
 });
