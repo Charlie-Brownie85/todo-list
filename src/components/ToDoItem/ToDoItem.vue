@@ -17,7 +17,7 @@ const isChecked = computed({
 </script>
 <template>
   <div
-    class="todo flex items-center gap-4 p-2 rounded-sm"
+    class="todo flex items-center gap-4 p-2 rounded-md bg-transparent dark:bg-base-800"
     :class="{'todo--completed': props.todo.completed }"
   >
     <CustomCheckbox
@@ -27,7 +27,7 @@ const isChecked = computed({
     />
     <div class="w-full">
       <span
-        class="todo-text text-xl font-medium px-1"
+        class="todo-text text-xl font-medium px-1 text-base-900 dark:text-white"
       >
         {{ props.todo.text }}
       </span>
@@ -65,7 +65,7 @@ const isChecked = computed({
       height: 2px;
       margin-top: 1px;
       transform: translateY(-50%);
-      @apply bg-base-900;
+      background: currentColor;
       transition: width 0.15s;
     }
   }

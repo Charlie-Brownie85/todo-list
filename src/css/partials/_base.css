@@ -11,6 +11,10 @@
   --headings-font-family: theme('fontFamily.display');
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
 body {
   font-family: var(--font-family);
   @apply bg-white;
@@ -27,6 +31,12 @@ h2
 
 #app {
   @apply min-h-screen m-0 bg-primary-100;
+  transition: background-color 0.3s ease;
+}
+
+.dark #app {
+  @apply bg-base-900;
+  transition: background-color 0.3s ease;
 }
 
 @media screen(lg) {

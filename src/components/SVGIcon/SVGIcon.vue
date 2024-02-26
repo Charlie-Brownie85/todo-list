@@ -8,11 +8,12 @@ const props = withDefaults(defineProps<{
   color: 'black',
 });
 
-const icon = defineAsyncComponent(() => import(`/src/assets/icons/${props.name}.svg`));
+const svg = defineAsyncComponent(() => import(`/src/assets/icons/${props.name}.svg`));
+
 </script>
 <template>
   <component
-    :is="icon"
+    :is="svg"
     :fill="props.color"
   />
 </template>

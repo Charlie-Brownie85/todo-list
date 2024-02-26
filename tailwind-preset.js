@@ -5,6 +5,7 @@ const colors = {
     400: '#D9D9D9',
     500: '#C1C1C1',
     700: '#767676',
+    800: '#4D4D4D',
     900: '#303030',
   },
   state: {
@@ -30,6 +31,7 @@ const colors = {
 };
 
 module.exports = {
+  darkMode: 'class',
   theme: {
     screens: {
       sm: '540px',

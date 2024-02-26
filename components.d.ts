@@ -10,6 +10,7 @@ declare module 'vue' {
     AddToDo: typeof import('./src/components/AddToDo/AddToDo.vue')['default']
     Checkbox: typeof import('./src/components/Checkbox/Checkbox.vue')['default']
     CustomCheckbox: typeof import('./src/components/CustomCheckbox/CustomCheckbox.vue')['default']
+    DarkMode: typeof import('./src/components/DarkMode/DarkMode.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']

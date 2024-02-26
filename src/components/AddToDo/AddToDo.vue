@@ -37,7 +37,7 @@ function submitToDo(e: KeyboardEvent) {
 <template>
   <div class="w-full flex gap-3 justify-center">
     <input
-      class="w-full max-w-md"
+      class="w-full max-w-md text-base-900 dark:text-white"
       type="text"
       name="new-todo-input"
       v-model="todoText"
@@ -49,7 +49,7 @@ function submitToDo(e: KeyboardEvent) {
       :disabled="!todoText?.length"
       @click="addNewTodo"
     >
-      <span>Add</span>
+      <span class="text-white dark:text-base-800">Add</span>
     </button>
   </div>
 </template>
@@ -86,6 +86,26 @@ button {
 
   span {
     @apply text-white font-bold;
+  }
+}
+
+.dark {
+  input::placeholder {
+    @apply text-base-500;
+  }
+
+  button {
+    @apply border-base-700 bg-base-300;
+
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      @apply bg-base-500;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      @apply cursor-not-allowed;
+    }
   }
 }
 </style>

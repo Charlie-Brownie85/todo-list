@@ -72,9 +72,10 @@ function removeCompletedClass(el: Element) {
           value="complete-all"
           :checked="!pendingToDos.length"
           size="small"
+          class="mb-2"
           @update:model-value="toggleAllTodos"
         >
-          <span class="text-xs text-base-700 italic">
+          <span class="text-xs text-base-700 dark:text-base-400 italic">
             {{ !pendingToDos.length ? 'uncheck all tasks' : 'complete all tasks' }}
           </span>
         </CustomCheckbox>
@@ -86,6 +87,7 @@ function removeCompletedClass(el: Element) {
             <TransitionGroup
               name="pending-list"
               tag="ul"
+              class="space-y-2"
               @before-leave="addCompletedClass"
             >
               <li
@@ -102,7 +104,7 @@ function removeCompletedClass(el: Element) {
           </div>
           <p
             v-else
-            class="text-center text-xl italic font-bold text-base-700 py-4 mb-3"
+            class="text-center text-xl italic font-bold text-base-700 dark:text-base-100 py-4 mb-3"
           >
             Great! No pending chores!
           </p>
@@ -129,6 +131,7 @@ function removeCompletedClass(el: Element) {
           <TransitionGroup
             name="done-list"
             tag="ul"
+            class="space-y-2"
             @before-leave="removeCompletedClass"
           >
             <li
@@ -146,7 +149,7 @@ function removeCompletedClass(el: Element) {
       </div>
       <p
         v-else
-        class="text-center text-xl italic font-bold text-base-700 py-2"
+        class="text-center text-xl italic font-bold text-base-700 dark:text-base-100 py-2"
       >
         Start adding tasks!
       </p>
