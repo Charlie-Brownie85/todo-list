@@ -1,32 +1,31 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
       value?: string | boolean;
-      modelValue?: boolean;
       inputId: string;
       disabled?: boolean;
       checkColor?: string;
       size?: 'normal' | 'small';
     }>(), {
   value: '',
-  modelValue: false,
   disabled: false,
   checkColor: '#3EBB59',
   size: () => 'normal',
 });
 
-const emit = defineEmits(['update:modelValue']);
-
+const model = defineModel<boolean>('checked', {
+  default: false,
+});
 </script>
 <template>
   <div class="checkbox">
     <input
       type="checkbox"
       :id="inputId"
-      :checked="props.modelValue"
+      v-model="model"
+      :checked="model"
       :value="props.value"
       :disabled="props.disabled"
       v-bind="$attrs"
-      @change="emit('update:modelValue', ($event?.target as HTMLInputElement)?.checked)"
     >
     <label
       :for="inputId"

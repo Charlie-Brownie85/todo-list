@@ -1,9 +1,18 @@
 <script setup lang="ts">
+import { computed } from 'vue';
+
 import type { Todo } from '@/declarations/types';
 
 const props = defineProps<{ todo: Todo }>();
 
 const emit = defineEmits(['toggle-todo', 'delete-todo']);
+
+const isChecked = computed({
+  get: () => props.todo.completed,
+  set: (value: boolean) => {
+    emit('toggle-todo', value);
+  },
+});
 
 </script>
 <template>
@@ -14,8 +23,7 @@ const emit = defineEmits(['toggle-todo', 'delete-todo']);
     <CustomCheckbox
       :input-id="`${props.todo.id}-checkbox-${props.todo.completed ? 'completed' : 'pending'}`"
       value="completed"
-      :checked="props.todo.completed"
-      @update:model-value="emit('toggle-todo')"
+      v-model:checked="isChecked"
     />
     <div class="w-full">
       <span

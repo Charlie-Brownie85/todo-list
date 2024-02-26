@@ -58,14 +58,14 @@ describe('CustomCheckbox', () => {
     const { emitted, user } = setup();
 
     await user.click(getInput());
-    expect(emitted('update:modelValue')).toEqual([[true]]);
+    expect(emitted('update:checked')).toEqual([[true]]);
   });
 
   it('should emit an event when the input is clicked (unchecked)', async () => {
     const { emitted, user } = setup(undefined, { checked: true });
 
     await user.click(getInput());
-    expect(emitted('update:modelValue')).toEqual([[false]]);
+    expect(emitted('update:checked')).toEqual([[false]]);
   });
 
   it('should become checked when unchecked and clicked', async () => {
