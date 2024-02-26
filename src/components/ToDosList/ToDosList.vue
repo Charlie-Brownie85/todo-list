@@ -61,7 +61,7 @@ function removeCompletedClass(el: Element) {
 </script>
 
 <template>
-  <div class="py-3 mt-5 overflow-hidden px-2">
+  <div class="py-3 mt-5 overflow-hidden px-2 w-full max-w-[45rem]">
     <Transition
       name="all-clear"
       mode="out-in"

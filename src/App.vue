@@ -7,6 +7,8 @@
       To Do list:
     </h1>
     <AddToDo />
-    <ToDosList />
+    <div class="flex justify-center">
+      <ToDosList />
+    </div>
   </main>
 </template>
