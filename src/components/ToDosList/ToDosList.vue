@@ -76,7 +76,7 @@ function removeCompletedClass(el: Element) {
           @update:model-value="toggleAllTodos"
         >
           <span class="text-xs text-base-700 dark:text-base-400 italic">
-            {{ !pendingToDos.length ? 'uncheck all tasks' : 'complete all tasks' }}
+            {{ !pendingToDos.length ? $t('uncheck all tasks') : $t('complete all tasks') }}
           </span>
         </CustomCheckbox>
         <Transition
@@ -106,7 +106,7 @@ function removeCompletedClass(el: Element) {
             v-else
             class="text-center text-xl italic font-bold text-base-700 dark:text-base-100 py-4 mb-3"
           >
-            Great! No pending chores!
+            {{ $t('Great! No pending chores!') }}
           </p>
         </Transition>
         <div
@@ -151,7 +151,7 @@ function removeCompletedClass(el: Element) {
         v-else
         class="text-center text-xl italic font-bold text-base-700 dark:text-base-100 py-2"
       >
-        Start adding tasks!
+        {{ $t('Start adding tasks!') }}
       </p>
     </Transition>
   </div>

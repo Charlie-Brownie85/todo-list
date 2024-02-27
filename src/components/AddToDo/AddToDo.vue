@@ -3,18 +3,21 @@ import { ref, computed } from 'vue';
 
 import { v4 as uuidv4 } from 'uuid';
 
+import i18n from '@/i18n';
+
 import { placeholderExamples } from '@/config/placeholder-examples';
 
 import { useTodosStore } from '@/stores/todos';
 
 const { addToDo } = useTodosStore();
 const todoText = ref('');
-const placeholderExample = ref(placeholderExamples[Math.floor(Math.random() * placeholderExamples.length)]);
+const { t } = i18n.global;
+const placeholderExample = ref(t(placeholderExamples[Math.floor(Math.random() * placeholderExamples.length)]));
 const placeholder = computed(() => `e.g. ${placeholderExample.value}`);
 
 function clearTodoText() {
   todoText.value = '';
-  placeholderExample.value = placeholderExamples[Math.floor(Math.random() * placeholderExamples.length)];
+  placeholderExample.value = t(placeholderExamples[Math.floor(Math.random() * placeholderExamples.length)]);
 }
 
 function addNewTodo() {
@@ -49,7 +52,7 @@ function submitToDo(e: KeyboardEvent) {
       :disabled="!todoText?.length"
       @click="addNewTodo"
     >
-      <span class="text-white dark:text-base-800">Add</span>
+      <span class="text-white dark:text-base-800">{{ $t('Add') }}</span>
     </button>
   </div>
 </template>

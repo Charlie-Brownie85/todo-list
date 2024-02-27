@@ -14,6 +14,9 @@ export default mergeConfig(
         exclude: [
           '**/node_modules/**',
           'dist/**',
+          'coverage/**',
+          '**/locales/**',
+          '**/i18n/**',
           'src/main.ts',
           '**/*.d.ts',
           '**/config/**',

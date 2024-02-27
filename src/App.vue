@@ -7,7 +7,7 @@
       <DarkMode />
     </div>
     <h1 class="font-bold text-3xl text-center mb-4 text-base-900 dark:text-base-100">
-      To Do list:
+      {{ $t('To Do list')+':' }}
     </h1>
     <AddToDo />
     <div class="flex justify-center">

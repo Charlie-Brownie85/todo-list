@@ -8,7 +8,7 @@ const props = withDefaults(defineProps<{
   color: 'black',
 });
 
-const svg = defineAsyncComponent(() => import(`/src/assets/icons/${props.name}.svg`));
+const svg = defineAsyncComponent(() => import(`../../assets/icons/${props.name}.svg`));
 
 </script>
 <template>
